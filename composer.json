@@ -1,9 +1,9 @@
 {
-    "name": "brother/contacts-bundle",
+    "name": "brother/contact-us-bundle",
     "type": "symfony-bundle",
     "version":"1.0",
-    "description": "contacts modules",
-    "keywords": ["symfony2", "contacts"],
+    "description": "contact us modules",
+    "keywords": ["symfony2", "contact_us"],
     "homepage": "http://doc13.ru",
     "authors": [
         {
