@@ -1,0 +1,40 @@
+Brother\ContactsBundle\Entity\Entry:
+    type: entity
+    table: brother_contacts
+    indexes:
+        created_at_idx:
+            columns:
+                - created_at
+        name_idx:
+            columns:
+                - name
+    id:
+        id:
+            type: bigint
+            
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: false
+        emain:
+            type: string
+            nullable: false
+        message:
+            type: text
+            nullable: false
+        created_at:
+            type: datetime
+            nullable: false
+            column: created_at
+        updated_at:
+            type: datetime
+            nullable: false
+            column: updated_at
+        deleted_at:
+            type: datetime
+            nullable: true
+            column: deleted_at
+    lifecycleCallbacks: {  }

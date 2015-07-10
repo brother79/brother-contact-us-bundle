@@ -1,0 +1,4 @@
+brother_contacts_contacts:
+    resource: "@BrotherContactsBundle/Resources/config/routing/entry.yml"
+    prefix:   /contacts
+

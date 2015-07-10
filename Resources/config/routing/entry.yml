@@ -1,0 +1,4 @@
+contacts:
+    path:     /
+    defaults: { _controller: "BrotherContactsBundle:Entry:index" }
+
