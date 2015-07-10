@@ -1,4 +1,4 @@
-contacts:
+contact_us:
     path:     /
-    defaults: { _controller: "BrotherContactsBundle:Entry:index" }
+    defaults: { _controller: "BrotherContactUsBundle:Entry:index" }
 

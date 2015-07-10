@@ -22,10 +22,10 @@
     },
 	"autoload": {
 		"psr-0": {
-			"Brother\\ContactsBundle": ""
+			"Brother\\ContactUsBundle": ""
 		}
 	},
-	"target-dir": "Brother/ContactsBundle",
+	"target-dir": "Brother/ContactUsBundle",
     "extra": {
         "branch-alias": {
             "dev-master": "1.0"

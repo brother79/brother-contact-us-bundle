@@ -1,6 +1,6 @@
-Brother\ContactsBundle\Entity\Entry:
+Brother\ContactUsBundle\Entity\Entry:
     type: entity
-    table: brother_contacts
+    table: brother_contact_us
     indexes:
         created_at_idx:
             columns:

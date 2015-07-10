@@ -1,6 +1,6 @@
 <?php
 
-namespace Brother\ContactsBundle\Entity;
+namespace Brother\ContactUsBundle\Entity;
 
 use Brother\CommonBundle\Model\Entry\ORMEntryManager;
 

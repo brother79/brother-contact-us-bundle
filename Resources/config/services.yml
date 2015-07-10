@@ -1,6 +1,6 @@
 services:
-    brother_contacts.admin.entry:
-        class: Brother\ContactsBundle\Admin\EntryAdmin
-        arguments: [~, Brother\ContactsBundle\Entity\Entry, SonataAdminBundle:CRUD]
+    brother_contact_us.admin.entry:
+        class: Brother\ContactUsBundle\Admin\EntryAdmin
+        arguments: [~, Brother\ContactUsBundle\Entity\Entry, SonataAdminBundle:CRUD]
         tags:
-            - {name: sonata.admin, manager_type: orm, group: admin, label: Contacts}
+            - {name: sonata.admin, manager_type: orm, group: admin, label: ContactUs}

@@ -1,6 +1,6 @@
 <?php
 
-namespace Brother\ContactsBundle\DependencyInjection;
+namespace Brother\ContactUsBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
@@ -12,7 +12,7 @@ use Symfony\Component\DependencyInjection\Loader;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  */
-class BrotherContactsExtension extends Extension
+class BrotherContactUsExtension extends Extension
 {
 
     /**
@@ -24,10 +24,10 @@ class BrotherContactsExtension extends Extension
         $bundles = $container->getParameter('kernel.bundles');
         $brotherConfig = array();
 
-        // get the BrotherContacts configuration
+        // get the BrotherContactUs configuration
         $configs = $container->getExtensionConfig($this->getAlias());
-        $contactsConfig = $this->processConfiguration(new Configuration(), $configs);
-        $container->prependExtensionConfig('brother_contacts', $brotherConfig);
+        $contactUsConfig = $this->processConfiguration(new Configuration(), $configs);
+        $container->prependExtensionConfig('brother_contact_us', $brotherConfig);
     }
 
     /**
@@ -48,12 +48,12 @@ class BrotherContactsExtension extends Extension
 
         // set model class
         if (isset($config['class']['model'])) {
-            $container->setParameter('brother_contacts.model.entry.class', $config['class']['model']);
+            $container->setParameter('brother_contact_us.model.entry.class', $config['class']['model']);
         }
 
         // set manager class
         if (isset($config['class']['manager'])) {
-            $container->setParameter('brother_contacts.manager.entry.class', $config['class']['manager']);
+            $container->setParameter('brother_contact_us.manager.entry.class', $config['class']['manager']);
         }
 
 

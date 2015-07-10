@@ -1,6 +1,6 @@
 <?php
 
-namespace Brother\ContactsBundle\Form;
+namespace Brother\ContactUsBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -30,7 +30,7 @@ class EntryType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Brother\ContactsBundle\Entity\Entry'
+            'data_class' => 'Brother\ContactUsBundle\Entity\Entry'
         ));
     }
 
@@ -39,6 +39,6 @@ class EntryType extends AbstractType
      */
     public function getName()
     {
-        return 'brother_contactsbundle_entry';
+        return 'brother_ContactUsBundle_entry';
     }
 }

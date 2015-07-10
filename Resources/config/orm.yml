@@ -1,13 +1,13 @@
 parameters:
-    brother_contacts.model.entry.class: Brother\ContactsBundle\Entity\Entry
-    brother_contacts.manager.entry.class: Brother\ContactsBundle\Entity\EntryManager
+    brother_contact_us.model.entry.class: Brother\ContactUsBundle\Entity\Entry
+    brother_contact_us.manager.entry.class: Brother\ContactUsBundle\Entity\EntryManager
 services:
-    brother_contacts.entity_manager:
+    brother_contact_us.entity_manager:
         alias: 'doctrine.orm.entity_manager'
 
-    brother_contacts.entry_manager:
-        class: %brother_contacts.manager.entry.class%
+    brother_contact_us.entry_manager:
+        class: %brother_contact_us.manager.entry.class%
         arguments:
             - '@event_dispatcher'
-            - '@brother_contacts.entity_manager'
-            - %brother_contacts.model.entry.class%
+            - '@brother_contact_us.entity_manager'
+            - %brother_contact_us.model.entry.class%

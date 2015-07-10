@@ -1,6 +1,6 @@
 <?php
 
-namespace Brother\ContactsBundle\Tests\Controller;
+namespace Brother\ContactUsBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
@@ -19,7 +19,7 @@ class EntryControllerTest extends WebTestCase
 
         // Fill in the form and submit it
         $form = $crawler->selectButton('Create')->form(array(
-            'brother_contactsbundle_entry[field_name]'  => 'Test',
+            'brother_ContactUsBundle_entry[field_name]'  => 'Test',
             // ... other fields to fill
         ));
 
@@ -33,7 +33,7 @@ class EntryControllerTest extends WebTestCase
         $crawler = $client->click($crawler->selectLink('Edit')->link());
 
         $form = $crawler->selectButton('Update')->form(array(
-            'brother_contactsbundle_entry[field_name]'  => 'Foo',
+            'brother_ContactUsBundle_entry[field_name]'  => 'Foo',
             // ... other fields to fill
         ));
 

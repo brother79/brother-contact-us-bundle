@@ -1,9 +1,9 @@
 <?php
 
-namespace Brother\ContactsBundle;
+namespace Brother\ContactUsBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class BrotherContactsBundle extends Bundle
+class BrotherContactUsBundle extends Bundle
 {
 }

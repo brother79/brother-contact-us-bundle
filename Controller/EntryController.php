@@ -1,12 +1,12 @@
 <?php
 
-namespace Brother\ContactsBundle\Controller;
+namespace Brother\ContactUsBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-use Brother\ContactsBundle\Entity\Entry;
-use Brother\ContactsBundle\Form\EntryType;
+use Brother\ContactUsBundle\Entity\Entry;
+use Brother\ContactUsBundle\Form\EntryType;
 
 /**
  * Entry controller.
@@ -33,7 +33,7 @@ class EntryController extends Controller
             }
         }
 
-        return $this->render('BrotherContactsBundle:Entry:index.html.twig', array(
+        return $this->render('BrotherContactUsBundle:Entry:index.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));

@@ -1,6 +1,6 @@
 <?php
 
-namespace Brother\ContactsBundle\DependencyInjection;
+namespace Brother\ContactUsBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -18,9 +18,9 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('brother_contacts');
+        $rootNode = $treeBuilder->root('brother_contact_us');
 
-        $treeBuilder->root('brother_contacts')
+        $treeBuilder->root('brother_contact_us')
             ->children()
                 ->scalarNode('db_driver')->defaultValue('orm')->end()
 
