@@ -9,6 +9,21 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 class EntryType extends AbstractType
 {
     /**
+     * @var string
+     */
+    private $entryClass;
+
+    /**
+     * Constructor
+     *
+     * @param string $entryClass
+     */
+    public function __construct($entryClass)
+    {
+        $this->entryClass = $entryClass;
+    }
+
+    /**
      * @param FormBuilderInterface $builder
      * @param array $options
      */
@@ -27,9 +42,8 @@ class EntryType extends AbstractType
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        $resolver->setDefaults(array(
-            'data_class' => 'Brother\ContactUsBundle\Entity\Entry'
-        ));
+        parent::setDefaultOptions($resolver);
+        $resolver->setDefaults(array('data_class' => $this->entryClass));
     }
 
     /**
@@ -37,6 +51,6 @@ class EntryType extends AbstractType
      */
     public function getName()
     {
-        return 'brother_ContactUsBundle_entry';
+        return 'brother_contact_us_entry';
     }
 }

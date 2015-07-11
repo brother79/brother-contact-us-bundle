@@ -1,0 +1,38 @@
+#
+# This file is part of the BrotherContactUsBundle package.
+#
+# (c) Yos Okusanya <yos.okusanya@gmail.com>
+#
+# This source file is subject to the MIT license that is bundled
+# with this source code in the file LICENSE.
+
+Brother\ContactUsBundle\Model\Entry:
+    properties:
+        name:
+            - NotBlank:
+                message: brother_contact_us.name.blank
+            - Length:
+                min: 3
+                max: 255
+                minMessage: brother_contact_us.name.short
+                maxMessage: brother_contact_us.name.long
+
+        email:
+            - NotBlank:
+                message: brother_contact_us.email.blank
+            - Email:
+                message: brother_contact_us.email.invalid
+            - Length:
+                max: 100
+                #max: 255
+                minMessage: brother_contact_us.email.short
+                maxMessage: brother_contact_us.email.long
+
+        message:
+            - NotBlank:
+                message: brother_contact_us.comment.blank
+            - Length:
+                min: 2
+                #max: 255
+                minMessage: brother_contact_us.comment.short
+                maxMessage: brother_contact_us.comment.long

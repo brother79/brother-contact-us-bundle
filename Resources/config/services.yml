@@ -1,4 +1,19 @@
+parameters:
+    brother_contact_us.mailer.config:
+        notification:
+            title: %brother_contact_us.mailer.email_title%
+            from: %brother_contact_us.mailer.sender_email%
+            to: %brother_contact_us.mailer.admin_email%
+            view: %brother_contact_us.view.mail.notify%
 services:
+    brother_contact_us.mailer:
+        class: %brother_contact_us.mailer.class%
+        arguments:
+            - '@event_dispatcher'
+            - { type: service', id: mailer, on-invalid: null}
+            - '@templating'
+            - %brother_contact_us.mailer.config%
+
     brother_contact_us.admin.entry:
         class: Brother\ContactUsBundle\Admin\EntryAdmin
         arguments: [~, Brother\ContactUsBundle\Entity\Entry, SonataAdminBundle:CRUD]

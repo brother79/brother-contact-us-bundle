@@ -26,25 +26,56 @@ class BrotherContactUsExtension extends Extension
 
         // get the BrotherContactUs configuration
         $configs = $container->getExtensionConfig($this->getAlias());
-        $contactUsConfig = $this->processConfiguration(new Configuration(), $configs);
+        $contact_usConfig = $this->processConfiguration(new Configuration(), $configs);
+
+        // enable spam detection if AkismetBundle is registered
+        // else disable spam detection
+        // can be overridden by setting the brother_contact_us.spam_detection.enable config
+        $brotherConfig['spam_detection'] = isset($bundles['AkismetBundle']) ? true : false;
+
+        if ('orm' == $contact_usConfig['db_driver']) {
+            $brotherConfig['class']['pager'] = 'Brother\ContactUsBundle\Pager\DefaultORM';
+        } else {
+            $brotherConfig['class']['pager'] = 'Brother\ContactUsBundle\Pager\DefaultMongodb';
+        }
+
+        // add the BrotherContactUsBundle configurations
+        // all options can be overridden in the app/config/config.yml file
         $container->prependExtensionConfig('brother_contact_us', $brotherConfig);
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function load(array $configs, ContainerBuilder $container)
     {
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
-        $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.yml');
 
-        if (empty($config['db_driver']) || !in_array(strtolower($config['db_driver']), array('mongodb', 'orm'))) {
+        if (!in_array(strtolower($config['db_driver']), array('mongodb', 'orm'))) {
             throw new \InvalidArgumentException(sprintf('Invalid db driver "%s".', $config['db_driver']));
         }
         $loader->load(sprintf('%s.yml', $config['db_driver']));
+
+        $loader->load('form.yml');
+
+        // core config
+        $container->setParameter('brother_contact_us.date_format', $config['date_format']);
+        $container->setParameter('brother_contact_us.notify_admin', $config['notify_admin']);
+
+        // mailer
+        $container->setParameter('brother_contact_us.mailer.class', $config['class']['mailer']);
+        $container->setParameter('brother_contact_us.mailer.email_title', $config['mailer']['email_title']);
+        $container->setParameter('brother_contact_us.mailer.admin_email', $config['mailer']['admin_email']);
+        $container->setParameter('brother_contact_us.mailer.sender_email', $config['mailer']['sender_email']);
+
+        // forms
+        $container->setParameter('brother_contact_us.form.entry.name', $config['form']['entry']['name']);
+        $container->setParameter('brother_contact_us.form.entry.type', $config['form']['entry']['type']);
+        $container->setParameter('brother_contact_us.form.entry.class', $config['form']['entry']['class']);
 
         // set model class
         if (isset($config['class']['model'])) {
@@ -56,6 +87,16 @@ class BrotherContactUsExtension extends Extension
             $container->setParameter('brother_contact_us.manager.entry.class', $config['class']['manager']);
         }
 
+        // load custom mailer service if set
+        if (isset($config['service']['mailer'])) {
+            $container->setAlias('brother_contact_us.mailer', $config['service']['mailer']);
+        }
 
+        $this->registerDoctrineMapping($config);
+
+    }
+
+    public function registerDoctrineMapping(array $config)
+    {
     }
 }

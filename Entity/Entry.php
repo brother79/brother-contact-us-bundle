@@ -16,17 +16,20 @@ class Entry implements EntryInterface
     private $id;
 
     /**
+     * @Assert\NotBlank()
      * @var string
      */
     private $name;
 
     /**
      * @var string
+     * @Assert\NotBlank()
      */
     private $email;
 
     /**
      * @var string
+     * @Assert\NotBlank()
      */
     private $message;
 
@@ -235,4 +238,10 @@ class Entry implements EntryInterface
     {
         return $this->phone;
     }
+
+    function __toString()
+    {
+       return $this->name;
+    }
+
 }

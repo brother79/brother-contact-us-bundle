@@ -10,8 +10,7 @@ Brother\ContactUsBundle\Entity\Entry:
                 - name
     id:
         id:
-            type: bigint
-            
+            type: integer
             id: true
             generator:
                 strategy: IDENTITY
@@ -40,4 +39,6 @@ Brother\ContactUsBundle\Entity\Entry:
             type: datetime
             nullable: true
             column: deleted_at
-    lifecycleCallbacks: {  }
+    lifecycleCallbacks:
+        prePersist: [ prePersist ]
+        preUpdate:  [ preUpdate ]

@@ -1,0 +1,16 @@
+services:
+    brother_contact_us.form.entry.type:
+        class: %brother_contact_us.form.entry.class%
+        tags:
+            - { name: form.type, alias: brother_contact_us_entry }
+        arguments:
+            - %brother_contact_us.model.entry.class%
+
+    brother_contact_us.form_factory.entry:
+        factory: ['@form.factory', 'createNamed']
+        class: Symfony\Component\Form\Form
+        arguments:
+            - %brother_contact_us.form.entry.name%
+            - %brother_contact_us.form.entry.type%
+            - ~
+
