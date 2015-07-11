@@ -4,3 +4,9 @@ Deleted At: Дата удаления
 Entry List: Сообщения
 Updated At: Дата обновления
 ContactUs: Написать нам
+email:
+    admin_notification: |
+       Новое сообщение от пользователя %name%
+       E-mail: %email%
+       Сообщение: %message%
+       Дата: %date%
