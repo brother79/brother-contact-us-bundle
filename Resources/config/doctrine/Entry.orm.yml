@@ -30,7 +30,7 @@ Brother\ContactUsBundle\Entity\Entry:
             nullable: false
         created_at:
             type: datetime
-            nullable: false
+            nullable: true
             column: created_at
         updated_at:
             type: datetime

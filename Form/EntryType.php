@@ -15,10 +15,10 @@ class EntryType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name')
-            ->add('email')
-            ->add('phone')
-            ->add('message')
+            ->add('name', null, array('label' => 'Имя'))
+            ->add('email', null, array('label' => 'E-mail'))
+            ->add('phone', null, array('label' => 'Телефон'))
+            ->add('message', null, array('label' => 'Сообщение'))
         ;
     }
     

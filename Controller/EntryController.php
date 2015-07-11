@@ -2,6 +2,7 @@
 
 namespace Brother\ContactUsBundle\Controller;
 
+use Brother\CommonBundle\AppDebug;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -29,6 +30,10 @@ class EntryController extends Controller
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($entity);
                 $em->flush();
+                $this->get('session')->getFlashBag()->add(
+                    'notice',
+                    'Ваше сообщение успешно получено. Вы можете отправить ещё одно.'
+                );
                 return $this->redirect($this->generateUrl('contact_us', array('id' => $entity->getId())));
             }
         }

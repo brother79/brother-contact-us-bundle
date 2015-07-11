@@ -45,6 +45,12 @@ class Entry implements EntryInterface
      */
     private $deleted_at;
 
+    function __construct()
+    {
+        $this->created_at = new \DateTime();
+        $this->updated_at = new \DateTime();
+    }
+
 
     /**
      * Get id
