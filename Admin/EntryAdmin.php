@@ -29,8 +29,6 @@ class EntryAdmin extends Admin
             ->add('phone')
             ->add('message')
             ->add('created_at')
-            ->add('updated_at')
-            ->add('deleted_at')
         ;
     }
 
@@ -47,8 +45,6 @@ class EntryAdmin extends Admin
 
             ->add('message')
             ->add('created_at')
-            ->add('updated_at')
-            ->add('deleted_at')
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'show' => array(),
@@ -65,14 +61,10 @@ class EntryAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('id')
             ->add('name')
             ->add('email')
             ->add('phone')
             ->add('message')
-            ->add('created_at')
-            ->add('updated_at')
-            ->add('deleted_at')
         ;
     }
 
@@ -88,8 +80,6 @@ class EntryAdmin extends Admin
             ->add('phone')
             ->add('message')
             ->add('created_at')
-            ->add('updated_at')
-            ->add('deleted_at')
         ;
     }
 }
