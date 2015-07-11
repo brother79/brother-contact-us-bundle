@@ -19,9 +19,12 @@ Brother\ContactUsBundle\Entity\Entry:
         name:
             type: string
             nullable: false
-        emain:
+        email:
             type: string
             nullable: false
+        phone:
+            type: string
+            nullable: true
         message:
             type: text
             nullable: false

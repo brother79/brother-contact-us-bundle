@@ -16,11 +16,9 @@ class EntryType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('emain')
+            ->add('email')
+            ->add('phone')
             ->add('message')
-            ->add('created_at')
-            ->add('updated_at')
-            ->add('deleted_at')
         ;
     }
     

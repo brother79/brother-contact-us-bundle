@@ -25,7 +25,7 @@ class EntryAdmin extends Admin
         $datagridMapper
             ->add('id')
             ->add('name')
-            ->add('emain')
+            ->add('email')
             ->add('message')
             ->add('created_at')
             ->add('updated_at')
@@ -41,7 +41,7 @@ class EntryAdmin extends Admin
         $listMapper
             ->add('id')
             ->add('name')
-            ->add('emain')
+            ->add('email')
             ->add('message')
             ->add('created_at')
             ->add('updated_at')
@@ -64,7 +64,7 @@ class EntryAdmin extends Admin
         $formMapper
             ->add('id')
             ->add('name')
-            ->add('emain')
+            ->add('email')
             ->add('message')
             ->add('created_at')
             ->add('updated_at')
@@ -80,7 +80,7 @@ class EntryAdmin extends Admin
         $showMapper
             ->add('id')
             ->add('name')
-            ->add('emain')
+            ->add('email')
             ->add('message')
             ->add('created_at')
             ->add('updated_at')

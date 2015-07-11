@@ -29,7 +29,7 @@ class EntryController extends Controller
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($entity);
                 $em->flush();
-//                return $this->redirect($this->generateUrl('contacts_show', array('id' => $entity->getId())));
+                return $this->redirect($this->generateUrl('contact_us', array('id' => $entity->getId())));
             }
         }
 
@@ -49,11 +49,11 @@ class EntryController extends Controller
     private function createCreateForm(Entry $entity)
     {
         $form = $this->createForm(new EntryType(), $entity, array(
-            'action' => $this->generateUrl('contacts_create'),
+            'action' => $this->generateUrl('contact_us'),
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', 'submit', array('label' => 'Отправить'));
 
         return $form;
     }

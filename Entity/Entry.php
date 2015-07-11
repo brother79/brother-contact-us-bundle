@@ -23,7 +23,7 @@ class Entry implements EntryInterface
     /**
      * @var string
      */
-    private $emain;
+    private $email;
 
     /**
      * @var string
@@ -80,26 +80,26 @@ class Entry implements EntryInterface
     }
 
     /**
-     * Set emain
+     * Set email
      *
-     * @param string $emain
+     * @param string $email
      * @return Entry
      */
-    public function setEmain($emain)
+    public function setEmail($email)
     {
-        $this->emain = $emain;
+        $this->email = $email;
 
         return $this;
     }
 
     /**
-     * Get emain
+     * Get email
      *
      * @return string 
      */
-    public function getEmain()
+    public function getEmail()
     {
-        return $this->emain;
+        return $this->email;
     }
 
     /**
@@ -200,5 +200,33 @@ class Entry implements EntryInterface
     public function setId($id)
     {
         $this->id = $id;
+    }
+    /**
+     * @var string
+     */
+    private $phone;
+
+
+    /**
+     * Set phone
+     *
+     * @param string $phone
+     * @return Entry
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Get phone
+     *
+     * @return string 
+     */
+    public function getPhone()
+    {
+        return $this->phone;
     }
 }
