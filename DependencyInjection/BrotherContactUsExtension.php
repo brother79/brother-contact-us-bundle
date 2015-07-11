@@ -33,12 +33,6 @@ class BrotherContactUsExtension extends Extension
         // can be overridden by setting the brother_contact_us.spam_detection.enable config
         $brotherConfig['spam_detection'] = isset($bundles['AkismetBundle']) ? true : false;
 
-        if ('orm' == $contact_usConfig['db_driver']) {
-            $brotherConfig['class']['pager'] = 'Brother\ContactUsBundle\Pager\DefaultORM';
-        } else {
-            $brotherConfig['class']['pager'] = 'Brother\ContactUsBundle\Pager\DefaultMongodb';
-        }
-
         // add the BrotherContactUsBundle configurations
         // all options can be overridden in the app/config/config.yml file
         $container->prependExtensionConfig('brother_contact_us', $brotherConfig);
