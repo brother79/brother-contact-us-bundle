@@ -38,7 +38,7 @@ class EntryController extends Controller
                     $this->get('brother_contact_us.mailer')->sendAdminNotification($entity);
                 }
 
-                return $this->redirect($this->generateUrl('contact_us', array('id' => $entity->getId())));
+                return $this->redirect($this->generateUrl('contact_us'));
             }
         }
 
