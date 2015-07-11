@@ -2,6 +2,7 @@
 
 namespace Brother\ContactUsBundle\Entity;
 
+use Brother\CommonBundle\Mailer\MailerEntryInterface;
 use Brother\CommonBundle\Model\Entry\EntryInterface;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -9,7 +10,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Entry
  */
-class Entry implements EntryInterface
+class Entry implements EntryInterface, MailerEntryInterface
 {
     /**
      * @var integer

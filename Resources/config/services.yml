@@ -1,5 +1,5 @@
 parameters:
-    brother_contact_us.view.mail.notify: 'BrotherContactUsBundle:Mail:Notify.html.twig'
+    brother_contact_us.view.mail.notify: 'BrotherContactUsBundle:Mail:notify.txt.twig'
     brother_contact_us.mailer.config:
         notification:
             title: %brother_contact_us.mailer.email_title%
@@ -11,7 +11,7 @@ services:
         class: %brother_contact_us.mailer.class%
         arguments:
             - '@event_dispatcher'
-            - { type: service', id: mailer, on-invalid: null}
+            - '@mailer'
             - '@templating'
             - %brother_contact_us.mailer.config%
 

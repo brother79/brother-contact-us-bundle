@@ -34,7 +34,10 @@ class EntryController extends Controller
                     'notice',
                     'Ваше сообщение успешно получено. Вы можете отправить ещё одно.'
                 );
-                AppDebug::_dx(1);
+                if($this->container->getParameter('brother_guestbook.notify_admin')) {
+                    $this->get('brother_contact_us.mailer')->sendAdminNotification($entity);
+                }
+
                 return $this->redirect($this->generateUrl('contact_us', array('id' => $entity->getId())));
             }
         }
