@@ -34,6 +34,7 @@ class EntryController extends Controller
                     'notice',
                     'Ваше сообщение успешно получено. Вы можете отправить ещё одно.'
                 );
+                AppDebug::_dx(1);
                 return $this->redirect($this->generateUrl('contact_us', array('id' => $entity->getId())));
             }
         }
