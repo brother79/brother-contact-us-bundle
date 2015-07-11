@@ -248,7 +248,7 @@ class Entry implements EntryInterface, MailerEntryInterface
 
 
     /**
-     * @ ORM\PrePersist
+     * @ORM\PrePersist
      */
     public function prePersist()
     {
@@ -256,7 +256,7 @@ class Entry implements EntryInterface, MailerEntryInterface
     }
 
     /**
-     * @ ORM\PreUpdate
+     * @ORM\PreUpdate
      */
     public function preUpdate()
     {
