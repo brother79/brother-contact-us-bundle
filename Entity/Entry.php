@@ -4,6 +4,7 @@ namespace Brother\ContactUsBundle\Entity;
 
 use Brother\CommonBundle\Model\Entry\EntryInterface;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Entry

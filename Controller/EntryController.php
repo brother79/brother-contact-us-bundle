@@ -54,7 +54,7 @@ class EntryController extends Controller
      */
     private function createCreateForm(Entry $entity)
     {
-        $form = $this->createForm(new EntryType(), $entity, array(
+        $form = $this->createForm(new EntryType(get_class($entity)), $entity, array(
             'action' => $this->generateUrl('contact_us'),
             'method' => 'POST',
         ));

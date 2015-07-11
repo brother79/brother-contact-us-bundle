@@ -1,4 +1,5 @@
 parameters:
+    brother_contact_us.view.mail.notify: 'BrotherContactUsBundle:Mail:Notify.html.twig'
     brother_contact_us.mailer.config:
         notification:
             title: %brother_contact_us.mailer.email_title%
