@@ -1,12 +1,4 @@
-#
-# This file is part of the BrotherContactUsBundle package.
-#
-# (c) Yos Okusanya <yos.okusanya@gmail.com>
-#
-# This source file is subject to the MIT license that is bundled
-# with this source code in the file LICENSE.
-
-Brother\ContactUsBundle\Model\Entry:
+Brother\ContactUsBundle\Entity  \Entry:
     properties:
         name:
             - NotBlank:
@@ -23,8 +15,8 @@ Brother\ContactUsBundle\Model\Entry:
             - Email:
                 message: brother_contact_us.email.invalid
             - Length:
-                max: 100
-                #max: 255
+#                max: 100
+                max: 255
                 minMessage: brother_contact_us.email.short
                 maxMessage: brother_contact_us.email.long
 
