@@ -49,6 +49,10 @@ class Entry implements EntryInterface, MailerEntryInterface
      * @var \DateTime
      */
     private $deleted_at;
+    /**
+     * @var string
+     */
+    private $phone;
 
     function __construct()
     {
@@ -56,15 +60,32 @@ class Entry implements EntryInterface, MailerEntryInterface
         $this->updated_at = new \DateTime();
     }
 
-
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
     }
 
     /**
@@ -81,13 +102,13 @@ class Entry implements EntryInterface, MailerEntryInterface
     }
 
     /**
-     * Get name
+     * Get email
      *
-     * @return string 
+     * @return string
      */
-    public function getName()
+    public function getEmail()
     {
-        return $this->name;
+        return $this->email;
     }
 
     /**
@@ -104,13 +125,13 @@ class Entry implements EntryInterface, MailerEntryInterface
     }
 
     /**
-     * Get email
+     * Get message
      *
-     * @return string 
+     * @return string
      */
-    public function getEmail()
+    public function getMessage()
     {
-        return $this->email;
+        return $this->message;
     }
 
     /**
@@ -127,13 +148,13 @@ class Entry implements EntryInterface, MailerEntryInterface
     }
 
     /**
-     * Get message
+     * Get created_at
      *
-     * @return string 
+     * @return \DateTime
      */
-    public function getMessage()
+    public function getCreatedAt()
     {
-        return $this->message;
+        return $this->created_at;
     }
 
     /**
@@ -150,13 +171,13 @@ class Entry implements EntryInterface, MailerEntryInterface
     }
 
     /**
-     * Get created_at
+     * Get updated_at
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
-    public function getCreatedAt()
+    public function getUpdatedAt()
     {
-        return $this->created_at;
+        return $this->updated_at;
     }
 
     /**
@@ -173,13 +194,13 @@ class Entry implements EntryInterface, MailerEntryInterface
     }
 
     /**
-     * Get updated_at
+     * Get deleted_at
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
-    public function getUpdatedAt()
+    public function getDeletedAt()
     {
-        return $this->updated_at;
+        return $this->deleted_at;
     }
 
     /**
@@ -196,27 +217,14 @@ class Entry implements EntryInterface, MailerEntryInterface
     }
 
     /**
-     * Get deleted_at
+     * Get phone
      *
-     * @return \DateTime 
+     * @return string
      */
-    public function getDeletedAt()
+    public function getPhone()
     {
-        return $this->deleted_at;
+        return $this->phone;
     }
-
-    /**
-     * @param int $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
-    /**
-     * @var string
-     */
-    private $phone;
-
 
     /**
      * Set phone
@@ -229,16 +237,6 @@ class Entry implements EntryInterface, MailerEntryInterface
         $this->phone = $phone;
 
         return $this;
-    }
-
-    /**
-     * Get phone
-     *
-     * @return string 
-     */
-    public function getPhone()
-    {
-        return $this->phone;
     }
 
     function __toString()
